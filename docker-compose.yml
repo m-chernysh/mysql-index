@@ -5,6 +5,11 @@ services:
   mysql:
     image: mysql:8.0
     environment:
+      MYSQL_DATABASE: "db_test"
+      MYSQL_USER: "test"
+      MYSQL_PASSWORD: "pass"
       MYSQL_ROOT_PASSWORD: "pass"
+    volumes:
+      - ./:/app
     ports:
-     - "3306:3306"
+      - "3306:3306"
